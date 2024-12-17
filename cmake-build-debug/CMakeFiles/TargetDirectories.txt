@@ -1,0 +1,3 @@
+C:/Users/איליי/CLionProjects/allojbsV2/cmake-build-debug/CMakeFiles/allojbsV2.dir
+C:/Users/איליי/CLionProjects/allojbsV2/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/איליי/CLionProjects/allojbsV2/cmake-build-debug/CMakeFiles/rebuild_cache.dir

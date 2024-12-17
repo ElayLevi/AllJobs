@@ -1,0 +1,3 @@
+tel aviv,programmer,full time,j12345,5
+ashdod,programer,part time,j21435564,3
+tel aviv,cyber ,full time,j123435,5
