@@ -39,6 +39,10 @@ public:
     // Account Management
     void remove_account(const string &filename, const string &user_id);
 
+    // Setters
+    string setPhoneNumber(const string &phone_number) {this->phone_number = phone_number;}
+    string setJobType(const string &job_type) {this->job_type = job_type;}
+
     // Getters
     string getResume() const { return resume; }
     string getPhoneNumber() const { return phone_number; }
@@ -46,6 +50,9 @@ public:
 
     // Display Details
     void display_details() const;
+
+    // Edit profile
+    void edit_profile(Candidate &camdidate);
 };
 
 #endif

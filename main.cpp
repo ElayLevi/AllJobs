@@ -103,7 +103,7 @@ void candidate_menu(vector<Candidate> &candidates, vector<Jobs> &jobs) {
                 cout << "Welcome, " << candidate.getFirstName() << "!\n";
                 int sub_choice;
                 do {
-                    cout << "1. Search Jobs\n2. Add Favorite\n3. View Submissions\n4. Logout\nEnter your choice: ";
+                    cout << "1. Search Jobs\n2. Add Favorite\n3. View Submissions\n4.edit profile\n5. Logout\nEnter your choice: ";
                     cin >> sub_choice;
                     cin.ignore();
                     if (sub_choice == 1) {
@@ -113,10 +113,15 @@ void candidate_menu(vector<Candidate> &candidates, vector<Jobs> &jobs) {
                         getline(cin, job_title);
                         candidate.add_submission(job_title);
                         cout << "Job favorited!\n";
-                    } else if (sub_choice == 3) {
+                    }
+                    else if (sub_choice == 3) {
                         candidate.display_submission_history();
                     }
-                } while (sub_choice != 4);
+                    else if (sub_choice == 4) {
+                        candidate.edit_profile(candidate);
+                        candidate.display_details();
+                    }
+                } while (sub_choice != 5);
                 break;
             }
         }
@@ -167,7 +172,7 @@ void employer_menu(vector<Employer> &employers, vector<Jobs> &jobs) {
                 cout << "Welcome, " << employer.getFirstName() << "!\n";
                 int sub_choice;
                 do {
-                    cout << "1. Add Job\n2. View Jobs\n3. Logout\nEnter your choice: ";
+                    cout << "1. Add Job\n2. View all Jobs\n3. view published jobs\n4. manage posted jobs\n5. Logout\nEnter your choice: ";
                     cin >> sub_choice;
                     cin.ignore();
                     if (sub_choice == 1) {
@@ -177,7 +182,7 @@ void employer_menu(vector<Employer> &employers, vector<Jobs> &jobs) {
                         getline(cin, loc);
                         cout << "Enter Profession: ";
                         getline(cin, prof);
-                        cout << "Enter Job Type: ";
+                        cout << "Enter Job Type (full time or part time): ";
                         getline(cin, type);
                         cout << "Enter Job UID: ";
                         getline(cin, uid);
@@ -187,11 +192,22 @@ void employer_menu(vector<Employer> &employers, vector<Jobs> &jobs) {
                         Jobs new_job(loc, prof, type, uid, exp);
                         jobs.push_back(new_job);
                         new_job.savetofile(JOB_FILE);
-                        cout << "Job added successfully!\n";
+                        employer.add_job(new_job, JOB_FILE);
+                        cout <<"returning to main menu...\n";
                     } else if (sub_choice == 2) {
                         for (const auto &job: jobs) job.display_details();
                     }
-                } while (sub_choice != 3);
+                    else if (sub_choice == 3) {
+                        cout <<"------Jobs published by me--------"<<endl;
+                        employer.display_jobs();
+                        cout << endl;
+                        cout <<"returning to main menu...\n";
+                    }
+
+                    else if (choice == 4) {
+                        //employer.update_job();
+                    }
+                } while (sub_choice != 5);
                 break;
             }
         }

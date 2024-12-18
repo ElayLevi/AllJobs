@@ -126,3 +126,65 @@ void Candidate::display_details() const {
          << "Resume: " << resume << "\n"
          << "Job Type: " << job_type << "\n";
 }
+
+// edit profile
+void Candidate::edit_profile(Candidate &candidate) {
+    int choice;
+    bool run = true;
+    while (run) {
+        cout << "Manage profile menu:" << endl;
+        cout << "1. Change my first name:" << endl;
+        cout << "2. Change my last name:" << endl;
+        cout << "3. Change my email address:" << endl;
+        cout << "4. Change my phone number:" << endl;
+        cout << "5. Display my profile's details:" << endl;
+        cout << "6.Exit." << endl;
+        cout << "Please choose an option:" << endl;
+        cin >> choice;
+        switch (choice) {
+            case 1: {
+                cout << "Enter the new first name :";
+                string new_first_name;
+                cin >> new_first_name;
+                candidate.setFirstName(new_first_name);
+                cout << "First name updated successfully!";
+                break;
+            }
+            case 2: {
+                cout << "Enter the new last name : ";
+                string new_last_name;
+                cin >> new_last_name;
+                candidate.setLastName(new_last_name);
+                cout << "Last name updated successfully!";
+                break;
+            }
+            case 3: {
+                cout << "Enter the new email:";
+                string new_email;
+                cin >> new_email;
+                candidate.setEmail(new_email);
+                cout << "Email updated successfully!";
+                break;
+            }
+            case 4: {
+                cout << "Enter the new phone number:";
+                string new_phone_number;
+                cin >> new_phone_number;
+                candidate.setPhoneNumber(new_phone_number);
+                cout << "Phone number updated successfully!";
+                break;
+            }
+            case 5: {
+                candidate.display_details();
+                break;
+            }
+            case 6:
+                cout << "Goodbye!" << endl;
+                run = false;
+                break;
+            default:
+                cout << "invalid option , please try again.";
+        }
+    }
+}
+

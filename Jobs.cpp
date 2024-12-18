@@ -52,3 +52,60 @@ void Jobs::display_details() const {
          << "Job UID: " << jobUID << "\n"
          << "Required Experience: " << experience << " years\n";
 }
+
+
+// Update posted job function
+
+/*
+void Jobs::update_job() {
+    int choice = 0;
+    bool run = true;
+    while (run) {
+        cout << "What do tou want to update?:" << endl;
+        cout << "1. Job location :" << endl;
+        cout << "2. Job profession (job title):" << endl;
+        cout << "3. Job type (full time / part time):" << endl;
+        cout << "4. Required experience:" << endl;
+        cout << "5.Exit." << endl;
+        cin >> choice;
+        switch (choice) {
+            case 1: {
+                string new_location;
+                cout << "Enter the new location:" << endl;
+                cin >> new_location;
+                location = new_location;
+                break;
+            }
+            case 2: {
+                string new_profession;
+                cout << "Enter the new profession:" << endl;
+                cin >> new_profession;
+                profession = new_profession;
+                break;
+            }
+            case 3: {
+                string new_job_type;
+                cout << "Enter the new job-type :" << endl;
+                cin >> new_job_type;
+                job_type = new_job_type;
+                break;
+            }
+            case 4: {
+                int new_experience;
+                cout << "Enter the new required experience:" << endl;
+                cin >> new_experience;
+                experience = new_experience;
+                break;
+            }
+            case 5 : {
+                run = false;
+                cout << "Updated successfully completed!" << endl;
+                break;
+            }
+            default:
+                cout << "Invalid choice." << endl;
+
+        }
+    }
+}
+*/

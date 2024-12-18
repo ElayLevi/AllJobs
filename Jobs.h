@@ -37,6 +37,10 @@ public:
 
     // Display Details
     void display_details() const;
+
+    // Update jobs function
+    //void Jobs::update_job();
+
 };
 
 #endif // ALLOJBSV2_JOBS_H

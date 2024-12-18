@@ -27,9 +27,12 @@ public:
     void delete_job(const string &jobUID, const string &filename);
     void display_jobs() const;
     void update_job(const string &jobUID, const Jobs &updated_job, const string &filename);
+    vector<Jobs> get_posted_jobs() {return posted_jobs;}
+    size_t get_posted_jobs_size() {return posted_jobs.size();}
 
     // Display Details
     void display_details() const;
+
 };
 
 #endif
